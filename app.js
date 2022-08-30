@@ -5,15 +5,17 @@ function Book() {
 }
 
 function addBookToLibrary() {
-    button.removeEventListener('click', addBookToLibrary);
+    
 }
 
 function addForm() {
     const form = document.createElement('form');
+    const attr = ['title', 'author', 'pages']
     for (let i = 0; i < 3; i++) {
         const input = document.createElement('input');
         input.setAttribute('type', 'text');
-        form.appendChild(input);        
+        input.setAttribute('placeholder', attr[i]);
+        form.appendChild(input);   
     }
     container.appendChild(form);
     button.removeEventListener('click', addForm);
