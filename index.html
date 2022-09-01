@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <button>New book</button>
+
+      <button id="bring-form">New book</button>
+      <form action="" method="post">
+        <input type="text" id="title" class="book-input" placeholder="title">
+        <input type="text" id="author" class="book-input" placeholder="author">
+        <input type="text" id="pages" class="book-input" placeholder="pages">
+      </form>
+      <button type="submit" id="submit-form">Add book</button>
+
+      <div id="display-container">
+        
+      </div>
     </div>
-    <script src="./app.js" ></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>

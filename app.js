@@ -1,37 +1,50 @@
 let myLibrary = [];
 //constructor
-function Book() {
-    
+function Book() {}
+
+function addBookToLibrary(e) {
+  console.log(e.target);
 }
 
-function addBookToLibrary() {
-    
+function formCheck() {
+  if (
+    document.querySelector("#container > form > input[type=text]:nth-child(1)")
+  ) {
+    console.log(
+      document.querySelector(
+        "#container > form > input[type=text]:nth-child(1)"
+      ).value
+    );
+  }
 }
 
-function addForm() {
-    const form = document.createElement('form');
-    const attr = ['title', 'author', 'pages']
-    for (let i = 0; i < 3; i++) {
-        const input = document.createElement('input');
-        input.setAttribute('type', 'text');
-        input.setAttribute('placeholder', attr[i]);
-        form.appendChild(input);   
-    }
-    container.appendChild(form);
-    button.removeEventListener('click', addForm);
+function addForm(e) {
+  buttonBringForm.style.display = "none";
+  form.style.display = "block";
+  submit.style.display = "block";
+}
+
+function hideElements() {
+  form.style.display = "none";
+  submit.style.display = "none";
 }
 
 const displayBook = () => {
-    for (let i = 0; i < myLibrary.length; i++) {
-        const p = document.createElement('p');
-        p.textContent = myLibrary[i];
-        console.log(p);
-        container.appendChild(p);
-    }
-    
-}
+  // for (let i = 0; i < myLibrary.length; i++) {
+  //     const p = document.createElement('p');
+  //     p.textContent = myLibrary[i];
+  //     console.log(p);
+  //     container.appendChild(p);
+  // }
+};
 
-const container = document.getElementById('container');
-const button = document.querySelector("#container > button");
+//element vars
+const container = document.getElementById("container");
+const buttonBringForm = document.querySelector("#bring-form");
+const form = document.querySelector("#container > form");
+const submit = document.getElementById("submit-form");
 
-button.addEventListener('click', addForm);
+//event listeners
+buttonBringForm.addEventListener("click", addForm);
+
+hideElements();
