@@ -3,30 +3,23 @@ let myLibrary = [];
 function Book() {}
 
 function addBookToLibrary(e) {
-  console.log(e.target);
+  
+  console.log(document.querySelector("#title").value);
 }
 
 function formCheck() {
-  if (
-    document.querySelector("#container > form > input[type=text]:nth-child(1)")
-  ) {
-    console.log(
-      document.querySelector(
-        "#container > form > input[type=text]:nth-child(1)"
-      ).value
-    );
-  }
+  //...
 }
 
 function addForm(e) {
   buttonBringForm.style.display = "none";
   form.style.display = "block";
-  submit.style.display = "block";
+  submitForm.style.display = "block";
 }
 
-function hideElements() {
+function hideElementsUponLoad() {
   form.style.display = "none";
-  submit.style.display = "none";
+  submitForm.style.display = "none";
 }
 
 const displayBook = () => {
@@ -42,9 +35,10 @@ const displayBook = () => {
 const container = document.getElementById("container");
 const buttonBringForm = document.querySelector("#bring-form");
 const form = document.querySelector("#container > form");
-const submit = document.getElementById("submit-form");
+const submitForm = document.getElementById("submit-form");
 
 //event listeners
 buttonBringForm.addEventListener("click", addForm);
+submitForm.addEventListener("click", addBookToLibrary)
 
-hideElements();
+hideElementsUponLoad();
